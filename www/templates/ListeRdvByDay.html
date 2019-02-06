@@ -1,0 +1,90 @@
+<ion-view title="Rendez-vous Par Date" class="ionic_datepicker_modal" ng-controller="ListByDayCtrl">
+    <ion-content>
+        <ion-list>
+       <ion-item ng-repeat=" day in listesDays">
+           <p>Nom Client:{{day.nom_client}}</p>
+
+       </ion-item>
+        </ion-list>
+        <ion-list>
+            <div>
+                <ion-item class="item-stable"
+                          ng-click="toggleGroup(groupbynumero)"
+                          ng-class="{active: isGroupShown(groupbynumero)}">
+                    <i class="icon" ng-class="isGroupShown(groupbynumero) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;
+                    {{groupbynumero.name}}
+                </ion-item>
+                <ion-item class="item-accordion"
+
+                          ng-show="isGroupShown(groupbynumero)">
+                    <div class="list">
+
+                        <div class="item item-input-inset">
+                            <label class="item-input-wrapper">
+                                <input type="text" placeholder="Email" ng-model="Number">
+                            </label>
+                            <button class="button button-small button-positive" ng-click="findByNumber(Number)">
+                                Submit
+                            </button>
+                        </div>
+
+                    </div>
+                </ion-item>
+            </div>
+            <div>
+                <ion-item class="item-stable"
+                          ng-click="toggleGroup(groupbydate)"
+                          ng-class="{active: isGroupShown(groupbydate)}">
+                    <i class="icon" ng-class="isGroupShown(groupbydate) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;
+                    {{groupbydate.name}}
+                </ion-item>
+                <ion-item class="item-accordion"
+
+                          ng-show="isGroupShown(groupbydate)">
+                    <div class="list">
+
+                        <div class="item item-input-inset">
+                            <label class="item-input-wrapper">
+                                <input type="text" placeholder="AAAA-MM-JJ" name= "Date" ng-model="date">
+                            </label>
+                            <button class="button button-float-calm" ng-click="openDatePicker()">
+                                <i class="icon ion-calendar"></i>
+                            </button>
+
+                        </div>
+                        <button class="button button-small button-positive" ng-click="findBydate(date)">
+                            Submit
+                        </button>
+                    </div>
+                </ion-item>
+                <div>
+                    <ion-item class="item-stable"
+                              ng-click="toggleGroup(groupbynumImmatriculation)"
+                              ng-class="{active: isGroupShown(groupbynumImmatriculation)}">
+                        <i class="icon" ng-class="isGroupShown(groupbynumImmatriculation) ? 'ion-minus' : 'ion-plus'"></i>
+                        &nbsp;
+                        {{groupbynumImmatriculation.name}}
+                    </ion-item>
+                    <ion-item class="item-accordion"
+
+                              ng-show="isGroupShown(groupbynumImmatriculation)">
+                        <div class="list">
+
+                            <div class="item item-input-inset">
+                                <label class="item-input-wrapper">
+                                    <input type="text" placeholder="Email" ng-model="Imma">
+                                </label>
+                                <button class="button button-small button-positive" ng-click="findByImma(Imma)">
+                                    Submit
+                                </button>
+                            </div>
+
+                        </div>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

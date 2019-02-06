@@ -1,0 +1,90 @@
+<ion-view title="Enregistrement d'un Rendez-vous" ng-controller="EntregistrementCtrl" >
+
+    <ion-content   ng-init="lastDay()" >
+
+        <h2>Heure du dernier Rendez-vous:{{lastDayRdv}}</h2>
+
+
+            <form>
+        <div class="list">
+            <ion-scroll  zooming = "true" style ="width:1350px; height: 400px" direction="xy">
+
+            <label class="item item-input item-stacked-label" >
+                <span class="input-label">Nom Du Client</span>
+                <input type="text"name="nom_cli" placeholder="John" ng-model="rdv.nom_cli">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Numero Citerne</span>
+                <input type="text" name="num_citerne" placeholder="Suhr" ng-model="rdv.num_citerne">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Numero Immatriculation</span>
+                <input type="text" name="num_immatri" placeholder="john@suhr.com" ng-model="rdv.num_immatri">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Nom Du Construeur</span>
+                <input type="text"name="Nom_Constructeur" placeholder="john@suhr.com" ng-model="rdv.Nom_Constructeur">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Numero d'abrobation</span>
+                <input type="text"name="Num_abrobation" placeholder="john@suhr.com" ng-model="rdv.Num_abrobation">
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Capacite Nominale
+                </div>
+                <select name="Capa_nominal" ng-model="rdv.Capa_nominal">
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="4000">4000</option>
+                    <option value="5000">5000</option>
+                    <option value="6000">6000</option>
+                    <option value="7000">7000</option>
+                    <option value="8000">8000</option>
+                    <option value="9000">9000</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                   Nombre De Compartiment
+                </div>
+                <select name="Nbre_compartiment" ng-model="rdv.Nbre_compartiment">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Type De Rendez-vous
+                </div>
+                <select name="type_rdv" ng-model="rdv.type_rdv">
+                    <option value="PRIMITIF">PRIMITIF</option>
+                    <option value="PERIODIQUE">PERIODIQUE</option>
+                </select>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Numero De Telephone</span>
+                <input type="text" name="num_tele" placeholder="john@suhr.com" ng-model="rdv.num_tele">
+            </label>
+            <label class="item item-input item-stacked-label" style="display: none">
+                <span class="input-label">Nom De La Photo</span>
+                <input type="text" name="nom_photo" placeholder="john@suhr.com" ng-model="nom_photo" >
+            </label>
+            <button class="button button-positive" ng-click="AddRdv(rdv)">
+                Save
+            </button>
+            </ion-scroll>
+
+        </div>
+        </form>
+
+    </ion-content>
+</ion-view>

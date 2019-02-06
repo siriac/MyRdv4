@@ -1,0 +1,62 @@
+<ion-view title="Authentification Certificat de jaugeage" ng-controller="ScannerBarCodeCtrl">
+    <ion-content>
+        <ion-list>
+            <div>
+                <ion-item class="item-stable"
+                          ng-click="toggleGroup(groupbynumero)"
+                          ng-class="{active: isGroupShown(groupbynumero)}">
+                    <i class="icon" ng-class="isGroupShown(groupbynumero) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;
+                    Group {{groupbynumero.name}}
+                </ion-item>
+                <ion-item class="item-accordion"
+
+                          ng-show="isGroupShown(groupbynumero)">
+                    <div class="list">
+
+                        <div class="item item-input-inset">
+                            <label class="item-input-wrapper">
+                                <input type="text" placeholder="Email" ng-model="Bynumero">
+                            </label>
+                            <button class="button button-small button-positive" ng-click="testmodel(Bynumero)">
+                                Submit
+                            </button>
+                        </div>
+
+                    </div>
+                </ion-item>
+            </div>
+            <div>
+                <ion-item class="item-stable"
+                          ng-click="toggleGroup(groupbycodebar)"
+                          ng-class="{active: isGroupShown(groupbycodebar)}">
+                    <i class="icon" ng-class="isGroupShown(groupbycodebar) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;
+                    Group {{groupbycodebar.name}}
+                </ion-item>
+                <ion-item class="item-accordion"
+
+                          ng-show="isGroupShown(groupbycodebar)">
+                    <div class="list">
+
+                        <div class="item item-input-inset">
+                            <label class="item-input-wrapper">
+                                <input type="text" placeholder="Email" ng-model="BycodeBar">
+                            </label>
+
+
+                            <button class="button button-float" ng-click="ScanCodeBar()">
+                                <i class="icon ion-qr-scanner"></i>
+                            </button>
+
+
+                        </div>
+                        <button class="button button-small button-positive" ng-click="testmodel(BycodeBar)">
+                            Submit
+                        </button>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
